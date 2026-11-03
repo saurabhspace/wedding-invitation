@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Saurabh and Simran//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wedding-2026122@saurabhspace.github.io
+DTSTAMP:20261103T000000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:Saurabh & Simran — Wedding celebrations
+LOCATION:Village Behlaog\, Theog\, Shimla\, Himachal Pradesh
+DESCRIPTION:Save the date. Ceremony names and timings will be shared later.
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

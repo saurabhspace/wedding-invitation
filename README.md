@@ -1,24 +1,53 @@
-# Himachali Wedding Invitation · हिमाचली विवाह निमंत्रण
+# Saurabh & Simran — A celebration in the hills
 
-A bilingual, mobile-first, static wedding invitation. No build tools, backend, or paid hosting needed.
+An English-led static wedding invitation for **2–4 December 2026**, Village Behlaog, Theog, Shimla. Ivory, forest green and muted gold typography, small Himachali illustrations and progressive interactions. No build step, backend or audio download is required.
 
-## Customize
+## Files
 
-1. Open `config.js` and replace all example names, date, venue, Google Maps URL, event details, and WhatsApp number.
-2. Optionally add a licensed `music.mp3` file next to `index.html` (music plays only after a guest taps the music button).
-3. To add couple photos, replace the `.photo-placeholder` element in `index.html` with `<img src="couple.jpg" alt="Couple photograph" style="max-width:100%;height:auto">`, and add `couple.jpg` to the folder.
-4. Open `index.html` in your browser to preview.
+- `index.html` — invitation copy, day-by-day disclosures, venue, contact details and RSVP form.
+- `assets/styles.css` — responsive layout, entrance animation and reduced-motion support.
+- `assets/app.js` — entry, date countdown, WhatsApp RSVP, click-to-load map, sharing and opt-in instrumental ambience.
+- `assets/calendar/*.ics` — individual dates and a combined three-day calendar reservation.
+- `assets/decor/` — SVG illustrations. Earlier artwork remains available for future use.
+- `village-photo.svg` — retained venue artwork from the previous design.
 
-## Free GitHub Pages hosting
+## Update ceremony details
 
-1. Create a **public** GitHub repository, e.g. `wedding-invitation`.
-2. Upload `index.html`, `style.css`, `script.js`, `config.js` (and optional media) to the repository root.
-3. Open repository **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**; select `main` and `/ (root)`, then Save.
-5. Once deployed, visit `https://YOUR_USERNAME.github.io/wedding-invitation/`.
+Ceremony names and timings are deliberately marked as pending. Replace the placeholder copy inside each `.day-content` in `index.html` once confirmed. Update the corresponding calendar files at the same time. Do not present an undecided ceremony time as confirmed.
 
-**Privacy:** GitHub Pages on the free plan serves public content. Do not publish sensitive contact or guest information. WhatsApp RSVP opens a prefilled message and does not store guest data in the website. No analytics are included.
+The countdown currently leads to **2 December 2026, 00:00 IST**, the start of the first celebration date, not a ceremony time. Change `CELEBRATIONS_START` in `assets/app.js` and the countdown label and note in `index.html` together if a confirmed ceremony should become the target.
 
-**Fonts:** Google Fonts are used; internet access is required to load them. The site falls back to local fonts if offline.
+Calendar files reserve whole days. `DTEND` is exclusive: the combined event ends on 5 December to include 2, 3 and 4 December. Keep each `UID` stable when updating an event and update `DTSTAMP` after edits. Calendar-app import behavior varies by device.
 
-**Note:** The initial RSVP phone number is intentionally a non-working placeholder. Replace it in `config.js` before publishing.
+## RSVP, directions and sharing
+
+The WhatsApp recipient is `RSVP_NUMBER` in `assets/app.js`. Keep it consistent with the visible contact number and telephone links in `index.html`. RSVPs open a draft; the guest must tap send in WhatsApp. Declines use zero guests. This website stores no responses.
+
+The Maps button preserves the supplied precise-location short link. The optional embed uses a separate village search, clearly labeled as such. No embedded map request is made until the guest taps “Load Google Map”.
+
+Native sharing is used when available, then clipboard copying, then a selectable link in an accessible dialog. Share the deployed page, not a local preview URL.
+
+## Sound
+
+Sound is off by default. The sound button starts a quiet, original synthesized instrumental pattern using Web Audio after a guest taps it. It needs no music file or third-party audio request. It pauses when the page is hidden and remains off until the guest starts it again. Replace it with a licensed recording later if desired; keep the explicit play/mute control and do not autoplay.
+
+## Preview and publish
+
+From the repository root:
+
+```sh
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000`. For GitHub Pages, choose **Settings → Pages → Deploy from a branch → main → / (root)**. Publish the entire repository so relative assets and calendar downloads work.
+
+When editing CSS or JS, bump the corresponding `?v=` value in `index.html`. Versions need not match if only one asset changes.
+
+## Checks before sharing
+
+- Test entrance, schedule disclosures and RSVP at narrow portrait and landscape sizes.
+- Verify the supplied Google Maps pin and test WhatsApp app handoff on a phone.
+- Import the calendar files in the calendar apps your guests use.
+- Confirm ceremony names, times and any additional Hindi wording before replacing placeholders.
+
+Google Fonts and Maps require internet access. The invitation falls back to local fonts. The content remains readable without JavaScript; interactive RSVP requires JavaScript, with a telephone contact available as fallback. Public hosting exposes the invitation and contact details.
