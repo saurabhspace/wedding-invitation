@@ -11,14 +11,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20261104b">
-  <script defer src="assets/app.js?v=20261104b"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20261104c">
+  <script defer src="assets/app.js?v=20261104c"></script>
 </head>
 <body>
   <div class="entrance" id="entrance" hidden>
     <div class="entrance-leaf entrance-leaf--left" aria-hidden="true"></div>
     <div class="entrance-leaf entrance-leaf--right" aria-hidden="true"></div>
-    <div class="entrance-card">
+    <img class="entrance-botanical entrance-botanical--left" src="assets/decor/botanical-branch.svg" alt="" aria-hidden="true"><img class="entrance-botanical entrance-botanical--right" src="assets/decor/botanical-branch.svg" alt="" aria-hidden="true">
+    <div class="entrance-card"><span class="wax-seal" aria-hidden="true">S<em>&</em>S</span>
       <span class="eyebrow">A NOTE FROM THE HILLS</span>
       <p class="entrance-names">Saurabh <i>&</i> Simran</p>
       <span class="fine-rule" aria-hidden="true"></span>
@@ -28,6 +29,7 @@
     </div>
   </div>
 
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
   <div id="site">
     <a class="skip-link" href="#invitation">Skip to invitation</a>
     <header class="topbar">
@@ -38,7 +40,7 @@
 
     <main>
       <section class="hero" id="home" tabindex="-1" aria-labelledby="coupleTitle">
-        <div class="hero-border" aria-hidden="true"></div>
+        <div class="hero-border" aria-hidden="true"></div><span class="hero-orbit" aria-hidden="true">✧</span><img class="hero-botanical" src="assets/decor/botanical-branch.svg" alt="" aria-hidden="true">
         <p class="blessing" lang="hi">॥ श्री गणेशाय नमः ॥</p>
         <p class="eyebrow">TOGETHER WITH OUR FAMILIES</p>
         <h1 id="coupleTitle"><span>Saurabh</span><em>&</em><span>Simran</span></h1>
@@ -46,14 +48,14 @@
         <div class="hero-date"><span>02 — 04</span><span>DECEMBER · 2026</span></div>
         <p class="hero-location">BEHLAOG, HIMACHAL PRADESH</p>
         <a class="scroll-cue" href="#invitation">OUR INVITATION <span aria-hidden="true">↓</span></a>
-        <img class="hero-mountains" src="assets/decor/mountain-ink.svg" alt="" aria-hidden="true">
+        <img class="hero-mountains" src="assets/decor/hillside-village.svg" alt="Illustrated Himalayan foothills with cedar trees and a small village"><span class="landscape-note">A CELEBRATION ROOTED IN THE HILLS</span>
         <span class="hero-side" aria-hidden="true">WITH LOVE, FROM THE MOUNTAINS</span>
       </section>
 
       <section class="invitation section" id="invitation" aria-labelledby="invitationTitle">
-        <span class="section-number">01 / THE INVITATION</span>
+        <img class="invitation-botanical" src="assets/decor/botanical-branch.svg" alt="" aria-hidden="true"><span class="section-number">01 / THE INVITATION</span>
         <div class="invitation-layout">
-          <div><span class="small-star" aria-hidden="true">✳</span><h2 id="invitationTitle">Some moments<br>are better <em>together.</em></h2></div>
+          <div><span class="union-mark" aria-hidden="true"><span>S</span><i>&</i><span>S</span></span><h2 id="invitationTitle">Some moments<br>are better <em>together.</em></h2></div>
           <div class="invitation-copy"><p>With joy in our hearts, we invite you to join our wedding celebrations in our native village, Behlaog.</p><p>Come for the celebrations. Stay for the conversations, the mountain air, and the memories we will make together.</p><p>Join us on any day from <strong>2 to 4 December</strong>. <strong>3 December</strong> is a special day to gather with our family and friends.</p><p class="signature">With love,<br><span>Saurabh & Simran</span></p></div>
         </div>
       </section>
@@ -69,14 +71,14 @@
         <p class="caption">Calendar entries reserve the dates; ceremony timings are still to follow.</p>
       </section>
 
-      <section class="countdown section" aria-labelledby="countdownTitle">
+      <section class="countdown section" aria-labelledby="countdownTitle"><span class="countdown-moon" aria-hidden="true"></span><img class="countdown-branch" src="assets/decor/botanical-branch.svg" alt="" aria-hidden="true">
         <span class="eyebrow">UNTIL THE CELEBRATIONS BEGIN</span><h2 id="countdownTitle">See you in <em>the hills.</em></h2>
         <div class="clock" role="group" aria-label="Time until 2 December 2026, midnight India Standard Time"><div><b id="days">—</b><span>DAYS</span></div><i aria-hidden="true">:</i><div><b id="hours">—</b><span>HOURS</span></div><i aria-hidden="true">:</i><div><b id="minutes">—</b><span>MINUTES</span></div><i aria-hidden="true">:</i><div><b id="seconds">—</b><span>SECONDS</span></div></div>
         <p class="caption" id="countdownNote">Counting down to 2 December · ceremony timings to follow</p>
       </section>
 
       <section class="venue section" id="venue" aria-labelledby="venueTitle">
-        <div class="venue-art" aria-hidden="true"><div class="venue-arch"><span class="eyebrow">A HOME IN THE HILLS</span><img class="temple-icon" src="assets/decor/temple-icon.svg" alt=""><span class="village-script">a little closer<br>to the mountains.</span><img class="venue-mountains" src="assets/decor/mountain-ink.svg" alt=""><span class="art-caption">BEHLAOG · THEOG · SHIMLA</span></div></div>
+        <div class="venue-art" aria-hidden="true"><div class="venue-arch"><span class="eyebrow">A HOME IN THE HILLS</span><img class="temple-icon" src="assets/decor/temple-icon.svg" alt=""><span class="village-script">a little closer<br>to the mountains.</span><img class="venue-mountains" src="assets/decor/hillside-village.svg" alt=""><span class="art-caption">BEHLAOG · THEOG · SHIMLA</span></div></div>
         <div class="venue-copy"><span class="section-number">03 / THE PLACE</span><h2 id="venueTitle">Where our<br><em>hearts call home.</em></h2><h3>Village Behlaog</h3><address>On Kargoli–Deha Road<br>Tehsil Theog, District Shimla<br>Himachal Pradesh</address><p>We look forward to welcoming you to our village. Use the location pin for directions, or call us if you need a hand finding your way.</p><a class="button" href="https://maps.app.goo.gl/gRWrUfiitpoB8tr29?g_st=ac" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a><a class="text-link venue-call" href="tel:+918988481269">Call Saurabh <span aria-hidden="true">↗</span></a></div>
         <details class="map-details"><summary>Explore the area <span aria-hidden="true">+</span></summary><div class="map-panel"><p class="caption">This map shows a village search. For the precise location, use “Get directions”.</p><button class="button button--outline" id="loadMap" type="button" hidden>Load Google Map <span aria-hidden="true">↗</span></button><div id="mapContainer"></div><noscript><p><a href="https://maps.app.goo.gl/gRWrUfiitpoB8tr29?g_st=ac">Open the location in Google Maps</a></p></noscript></div></details>
       </section>
@@ -86,7 +88,7 @@
         <noscript><p>Please call Saurabh using the number above to RSVP. The WhatsApp form requires JavaScript.</p><style>#rsvpForm{display:none}</style></noscript><form id="rsvpForm"><label for="guestName">YOUR NAME</label><input id="guestName" name="guestName" autocomplete="name" maxlength="100" required placeholder="How should we address you?"><label for="attendance">WILL YOU BE JOINING US?</label><select id="attendance" name="attendance"><option value="Joyfully accepts">Yes, with pleasure</option><option value="Regretfully declines">Sorry, I can’t make it</option></select><div id="guestCountField"><label for="guestCount">NUMBER OF GUESTS, INCLUDING YOU</label><input id="guestCount" name="guestCount" type="number" inputmode="numeric" min="1" max="30" value="1" required></div><button class="button button--light" type="submit">RSVP on WhatsApp <span aria-hidden="true">↗</span></button><p class="caption" id="rsvpNote">Opens a WhatsApp draft. Tap send there to confirm your response.</p></form>
       </section>
     </main>
-    <footer class="closing"><p class="eyebrow">WITH LOVE & GRATITUDE</p><p class="closing-names">Saurabh <em>&</em> Simran</p><p>2–4 December 2026 · Behlaog</p><button class="text-link" id="shareInvite" type="button" hidden>Share our invitation <span aria-hidden="true">↗</span></button><p class="caption share-status" id="shareStatus" role="status"></p><a class="back-top" href="#home">BACK TO TOP ↑</a></footer>
+    <footer class="closing"><img class="closing-branch" src="assets/decor/botanical-branch.svg" alt="" aria-hidden="true"><p class="eyebrow">WITH LOVE & GRATITUDE</p><p class="closing-names">Saurabh <em>&</em> Simran</p><p>2–4 December 2026 · Behlaog</p><button class="text-link" id="shareInvite" type="button" hidden>Share our invitation <span aria-hidden="true">↗</span></button><p class="caption share-status" id="shareStatus" role="status"></p><a class="back-top" href="#home">BACK TO TOP ↑</a></footer>
   </div>
   <div class="copy-dialog" id="copyDialog" role="dialog" aria-modal="true" aria-labelledby="copyTitle" hidden><div><h2 id="copyTitle">Share a little joy.</h2><p>Copy this link and send it to your loved ones.</p><label for="shareUrl">Invitation link</label><input id="shareUrl" readonly><button class="button" id="closeCopy" type="button">Done</button></div></div>
 </body>

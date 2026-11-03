@@ -23,6 +23,33 @@
     },reducedMotion.matches?0:1100);
   };
 
+  // Subtle section reveals; content stays visible if observation is unavailable.
+  if ('IntersectionObserver' in window && !reducedMotion.matches) {
+    const observer=new IntersectionObserver(entries=>{
+      for(const entry of entries)if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');observer.unobserve(entry.target);
+      }
+    },{threshold:.08});
+    for(const element of document.querySelectorAll('.invitation-layout,.section-heading,.day,.venue-art,.venue-copy,.rsvp-copy')){
+      element.classList.add('reveal-ready');observer.observe(element);
+    }
+    reducedMotion.addEventListener('change',event=>{
+      if(event.matches){observer.disconnect();for(const element of document.querySelectorAll('.reveal-ready'))element.classList.add('is-visible');}
+    });
+  }
+  let progressQueued=false;
+  function updateProgress(){
+    const length=document.documentElement.scrollHeight-window.innerHeight;
+    const progress=length>0?Math.min(1,Math.max(0,window.scrollY/length)):0;
+    $('readingProgress').style.transform=`scaleX(${progress})`;
+    progressQueued=false;
+  }
+  window.addEventListener('scroll',()=>{
+    if(!progressQueued){progressQueued=true;window.requestAnimationFrame(updateProgress);}
+  },{passive:true});
+  window.addEventListener('resize',updateProgress);
+  updateProgress();
+
   function tick(){
     const remaining=Math.max(0,new Date(CELEBRATIONS_START).getTime()-Date.now());
     for(const [id,n] of [['days',Math.floor(remaining/86400000)],['hours',Math.floor(remaining/3600000)%24],['minutes',Math.floor(remaining/60000)%60],['seconds',Math.floor(remaining/1000)%60]])

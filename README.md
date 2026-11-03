@@ -1,6 +1,6 @@
 # Saurabh & Simran — A celebration in the hills
 
-An English-led static wedding invitation for **2–4 December 2026**, Village Behlaog, Theog, Shimla. Ivory, forest green and muted gold typography, small Himachali illustrations and progressive interactions. No build step, backend or audio download is required.
+An English-led static wedding invitation for **2–4 December 2026**, Village Behlaog, Theog, Shimla. Ivory, forest green and muted gold typography, an illustrated Himalayan village landscape, botanical accents and progressive interactions. No build step, backend or audio download is required.
 
 ## Files
 
@@ -51,3 +51,5 @@ When editing CSS or JS, bump the corresponding `?v=` value in `index.html`. Vers
 - Confirm ceremony names, times and any additional Hindi wording before replacing placeholders.
 
 Google Fonts and Maps require internet access. The invitation falls back to local fonts. The content remains readable without JavaScript; interactive RSVP requires JavaScript, with a telephone contact available as fallback. Public hosting exposes the invitation and contact details.
+
+The graphical edition adds original SVG mountain/village artwork, a decorative monogram seal, botanical flourishes, illustrated date tiles, a scroll progress line and subtle section reveals. The village scene is decorative artwork, not an actual venue view. Reduced-motion preferences disable reveals and entrance animation.
