@@ -17,3 +17,8 @@
 .event-card__inner{border:1px solid #d4ae7d}
 .rsvp{background:radial-gradient(ellipse at 50% 0%,#22503f,#0d2d26 75%)}
 @media(max-width:680px){.entrance__invitation{max-width:82vw;padding:25px 12px}.entrance__invitation h1{font-size:clamp(2.25rem,8vw,3.5rem)}.hero__content{padding:65px 20px 35px}.hero__landscape{height:160px}.invitation{background-size:auto,auto 55%}}
+
+/* Keep entry and form controls usable on small mobile viewports. */
+.entrance__invitation{max-height:calc(100% - 40px);overflow-y:auto}
+.rsvp input,.rsvp select{font-size:16px}
+.share-link{min-height:44px;padding:10px 12px}
