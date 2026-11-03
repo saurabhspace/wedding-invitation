@@ -1,55 +1,47 @@
-# Saurabh & Simran — A celebration in the hills
+# Saurabh & Simran — Wedding Invitation
 
-An English-led static wedding invitation for **2–4 December 2026**, Village Behlaog, Theog, Shimla. Ivory, forest green and muted gold typography, an illustrated Himalayan village landscape, botanical accents and progressive interactions. No build step, backend or audio download is required.
+A static invitation for **2–4 December 2026** at our home in Village Behlaog, Theog, Shimla. The theme uses a charcoal textured background, gold calligraphy, ornate frames and jewel-like floral dividers. There is no palace image or substitute photograph of the home.
 
-## Files
+## Page and assets
 
-- `index.html` — invitation copy, day-by-day disclosures, venue, contact details and RSVP form.
-- `assets/styles.css` — responsive layout, entrance animation and reduced-motion support.
-- `assets/app.js` — entry, date countdown, WhatsApp RSVP, click-to-load map, sharing and opt-in instrumental ambience.
-- `assets/calendar/*.ics` — individual dates and a combined three-day calendar reservation.
-- `assets/decor/` — SVG illustrations. Earlier artwork remains available for future use.
-- `village-photo.svg` — retained venue artwork from the previous design.
+- `index.html` — invitation, supplied couple portrait, dates, timeline, home placeholder, directions, family welcome, music and per-day RSVP.
+- `assets/styles.css` — responsive English/Hindi typography, dark texture, lamp flame and reduced-motion styles.
+- `assets/app.js` — lamp entrance, scratch/tap date reveal, English/Hindi toggle, countdown, guest steppers, WhatsApp drafts, optional map, sharing and opt-in instrumental ambience.
+- `assets/images/couple.webp` — optimized copy of the supplied portrait; the source upload is unchanged.
+- `assets/images/brass-diya.webp` and `gold-divider.webp` — original generated decorative assets optimized for the page.
+- `assets/decor/ornate-frame.svg`, `midnight-texture.svg` and `home-placeholder.svg` — original page graphics. Earlier artwork remains available in the repository.
+- `assets/calendar/*.ics` — individual all-day dates and a combined three-day reservation.
 
-## Update ceremony details
+## Add the home photograph later
 
-Ceremony names and timings are deliberately marked as pending. Replace the placeholder copy inside each `.day-content` in `index.html` once confirmed. Update the corresponding calendar files at the same time. Do not present an undecided ceremony time as confirmed.
+Upload the actual home photograph to `assets/images/home.webp`, then change `#homePhoto` in `index.html` from `assets/decor/home-placeholder.svg` to that file. Set accurate width, height and descriptive alt text. Replace the placeholder caption and update the Hindi `homePhoto` translation in `assets/app.js`. No JavaScript or CSS layout change is required.
 
-The countdown currently leads to **2 December 2026, 00:00 IST**, the start of the first celebration date, not a ceremony time. Change `CELEBRATIONS_START` in `assets/app.js` and the countdown label and note in `index.html` together if a confirmed ceremony should become the target.
+## Confirm details before changing them
 
-Calendar files reserve whole days. `DTEND` is exclusive: the combined event ends on 5 December to include 2, 3 and 4 December. Keep each `UID` stable when updating an event and update `DTSTAMP` after edits. Calendar-app import behavior varies by device.
+Ceremony names and timings are still undecided. The timeline deliberately shows day numbers and “Details to follow”. Update its copy and the Hindi translations after confirmation. Do not copy ceremony names, dates, relatives, travel times or venue details from the design reference.
 
-## RSVP, directions and sharing
+The countdown leads to **2 December 2026 at 00:00 IST**, the start of the first celebration date, not a confirmed ceremony time. Change `CELEBRATIONS_START`, its accessible label, the countdown note and translations together if a ceremony becomes the target.
 
-The WhatsApp recipient is `RSVP_NUMBER` in `assets/app.js`. Keep it consistent with the visible contact number and telephone links in `index.html`. RSVPs open a draft; the guest must tap send in WhatsApp. Declines use zero guests. This website stores no responses.
+Calendar entries reserve whole days. The combined event uses `DTSTART:20261202` and exclusive `DTEND:20261205` to include 2–4 December. Keep UIDs stable and update DTSTAMP when editing calendar events. Device import behavior varies.
 
-The Maps button preserves the supplied precise-location short link. The optional embed uses a separate village search, clearly labeled as such. No embedded map request is made until the guest taps “Load Google Map”.
+## RSVP and external links
 
-Native sharing is used when available, then clipboard copying, then a selectable link in an accessible dialog. Share the deployed page, not a local preview URL.
+`RSVP_NUMBER` in `assets/app.js` is the WhatsApp recipient. Keep it consistent with visible telephone links. The form collects 0–30 guests on each day; counts include the person replying. All-zero counts mean a decline. The message opens as a draft, and is sent only when the guest presses send in WhatsApp. Nothing is stored by the website.
 
-## Sound
+The supplied Google Maps short link remains the precise-location button. The optional embed uses a separately labeled village search and makes no request until “Show the map” is pressed. Verify the exact map pin on a phone before sharing.
 
-Sound is off by default. The sound button starts a quiet, original synthesized instrumental pattern using Web Audio after a guest taps it. It needs no music file or third-party audio request. It pauses when the page is hidden and remains off until the guest starts it again. Replace it with a licensed recording later if desired; keep the explicit play/mute control and do not autoplay.
+Sharing uses the device share sheet when supported, otherwise clipboard copying or a selectable-link dialog. Share the deployed URL, not a preview URL.
 
-## Preview and publish
+## Interactions and accessibility
 
-From the repository root:
+The entrance is enabled only by JavaScript; without JavaScript the invitation is readable. Date cards support scratching, tapping and keyboard activation. Native number fields remain editable as an alternative to guest +/- controls. English is the default language. Sound is off by default and the play/mute buttons start an original local Web Audio pattern; no song file, third-party player or autoplay is used. Sound stops when the page is hidden. Reduced-motion preferences suppress animated transitions, flicker and section reveals.
+
+## Preview and hosting
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`. For GitHub Pages, choose **Settings → Pages → Deploy from a branch → main → / (root)**. Publish the entire repository so relative assets and calendar downloads work.
+Open `http://localhost:8000`. For GitHub Pages choose **Settings → Pages → Deploy from a branch → main → / (root)**. No build step or backend is needed. Publish all referenced files. Bump the corresponding CSS/JS `?v=` versions in `index.html` when changing either asset.
 
-When editing CSS or JS, bump the corresponding `?v=` value in `index.html`. Versions need not match if only one asset changes.
-
-## Checks before sharing
-
-- Test entrance, schedule disclosures and RSVP at narrow portrait and landscape sizes.
-- Verify the supplied Google Maps pin and test WhatsApp app handoff on a phone.
-- Import the calendar files in the calendar apps your guests use.
-- Confirm ceremony names, times and any additional Hindi wording before replacing placeholders.
-
-Google Fonts and Maps require internet access. The invitation falls back to local fonts. The content remains readable without JavaScript; interactive RSVP requires JavaScript, with a telephone contact available as fallback. Public hosting exposes the invitation and contact details.
-
-The graphical edition adds original SVG mountain/village artwork, a decorative monogram seal, botanical flourishes, illustrated date tiles, a scroll progress line and subtle section reveals. The village scene is decorative artwork, not an actual venue view. Reduced-motion preferences disable reveals and entrance animation.
+Google Fonts and optional Maps require internet access; local font fallbacks are provided. Public hosting exposes invitation content, portrait and contact details.
