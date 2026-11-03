@@ -1,24 +1,38 @@
-# Himachali Wedding Invitation · हिमाचली विवाह निमंत्रण
+# Saurabh & Simran — Wedding Invitation
 
-A bilingual, mobile-first, static wedding invitation. No build tools, backend, or paid hosting needed.
+A static wedding invitation for 2–4 December 2026 in Village Behlaog, Theog, Shimla. No build step or backend is required.
+
+## Files
+
+- `index.html` — invitation text, event dates, venue, Maps links, RSVP form and metadata.
+- `assets/styles.css` — layout, mobile styles and entrance animation.
+- `assets/app.js` — entrance interaction, countdown, WhatsApp RSVP and sharing.
+- `assets/decor/` — decorative SVG artwork.
+- `village-photo.svg` — venue image used by the page and social metadata.
 
 ## Customize
 
-1. Open `config.js` and replace all example names, date, venue, Google Maps URL, event details, and WhatsApp number.
-2. Optionally add a licensed `music.mp3` file next to `index.html` (music plays only after a guest taps the music button).
-3. To add couple photos, replace the `.photo-placeholder` element in `index.html` with `<img src="couple.jpg" alt="Couple photograph" style="max-width:100%;height:auto">`, and add `couple.jpg` to the folder.
-4. Open `index.html` in your browser to preview.
+Edit the invitation content and event details in `index.html`.
+The countdown target is in `assets/app.js`: currently **3 December 2026 at 09:00 IST** (`2026-12-03T09:00:00+05:30`). Update its accessible label in `index.html` if the target date changes.
 
-## Free GitHub Pages hosting
+The WhatsApp recipient is configured in `assets/app.js`. Keep it consistent with the visible contact number and telephone link in `index.html`. Use international digits without a plus sign in the `wa.me` URL.
 
-1. Create a **public** GitHub repository, e.g. `wedding-invitation`.
-2. Upload `index.html`, `style.css`, `script.js`, `config.js` (and optional media) to the repository root.
-3. Open repository **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**; select `main` and `/ (root)`, then Save.
-5. Once deployed, visit `https://YOUR_USERNAME.github.io/wedding-invitation/`.
+The directions button and embedded map are configured separately in `index.html`. The embed uses a text search; verify that it matches the button's precise destination before sharing.
 
-**Privacy:** GitHub Pages on the free plan serves public content. Do not publish sensitive contact or guest information. WhatsApp RSVP opens a prefilled message and does not store guest data in the website. No analytics are included.
+When changing `assets/app.js` or `assets/styles.css`, bump the corresponding `?v=` value in `index.html`. The two versions do not need to match.
 
-**Fonts:** Google Fonts are used; internet access is required to load them. The site falls back to local fonts if offline.
+## Preview and publish
 
-**Note:** The initial RSVP phone number is intentionally a non-working placeholder. Replace it in `config.js` before publishing.
+Serve the repository root with a static web server, for example:
+
+```sh
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000`. Check portrait and landscape layouts, entrance access, countdown, Maps, RSVP and sharing. WhatsApp opens a draft; the guest must send it manually.
+
+For GitHub Pages, select **Settings → Pages → Deploy from a branch → main → / (root)**. Publish the entire repository so the assets retain their relative paths.
+
+## External services
+
+Google Fonts and Maps need internet access. WhatsApp RSVP does not store responses on this website. Native sharing is used when available, with clipboard and manual-copy fallbacks. Public hosting exposes invitation content and contact details.
