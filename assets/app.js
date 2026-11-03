@@ -23,20 +23,40 @@
   if(scratchCards.every(card=>card.classList.contains('is-revealed')))$('revealStatus').textContent=t('revealed');
  };
 
- // The lamp entrance is optional enhancement; no-JavaScript visitors see the invitation.
- const entrance=$('entrance');entrance.hidden=false;$('site').inert=true;
+ // Light the central wick, warm the gate, reveal the names, then open the page.
+ // The decorative gate is shared with the welcome, so its lamps stay lit.
+ const entrance=$('entrance'),entryTimers=[];
+ let entryStarted=false;
+ function finishEntry(){
+  for(const timer of entryTimers)window.clearTimeout(timer);
+  entrance.hidden=true;entrance.dataset.phase='open';entrance.removeAttribute('aria-busy');
+  $('site').inert=false;document.body.classList.remove('entry-active');
+  window.scrollTo(0,0);$('home').focus({preventScroll:true});
+ }
+ entrance.hidden=false;$('site').inert=true;
  document.body.classList.add('entry-active');$('openInvitation').focus({preventScroll:true});
  $('openInvitation').onclick=()=>{
-  $('openInvitation').disabled=true;entrance.classList.add('is-lit');
-  const prompt=entrance.querySelector('.lamp-prompt');if(prompt)prompt.textContent=t('lit');
-  window.setTimeout(()=>{
+  if(entryStarted)return;
+  entryStarted=true;$('openInvitation').disabled=true;
+  entrance.setAttribute('aria-busy','true');entrance.dataset.phase='igniting';
+  entrance.classList.add('is-lit');entrance.querySelector('.entrance-heading').setAttribute('aria-hidden','true');
+  $('entryStatus').textContent=t('lit');
+  if(reducedMotion.matches){finishEntry();return;}
+  entryTimers.push(window.setTimeout(()=>{
+   entrance.classList.add('is-warming');entrance.dataset.phase='warming';
+  },420));
+  entryTimers.push(window.setTimeout(()=>{
+   entrance.classList.add('is-revealed');entrance.dataset.phase='welcome';
+   entrance.querySelector('.entrance-reveal').removeAttribute('aria-hidden');
+  },1400));
+  entryTimers.push(window.setTimeout(()=>{
    entrance.classList.add('is-leaving');
-   window.setTimeout(()=>{
-    entrance.hidden=true;$('site').inert=false;document.body.classList.remove('entry-active');
-    window.scrollTo(0,0);$('home').focus({preventScroll:true});
-   },reducedMotion.matches?0:550);
-  },reducedMotion.matches?0:1050);
+   entryTimers.push(window.setTimeout(finishEntry,600));
+  },3200));
  };
+ reducedMotion.addEventListener('change',event=>{
+  if(event.matches&&entryStarted&&!entrance.hidden)finishEntry();
+ });
 
  // Scratch or tap: every date also has a native keyboard-operable button.
  const scratchCards=[...document.querySelectorAll('[data-scratch]')];

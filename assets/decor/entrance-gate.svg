@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 1000" fill="none" preserveAspectRatio="none">
+<defs>
+ <linearGradient id="metal" x2="1" y2=".4"><stop stop-color="#69401f"/><stop offset=".22" stop-color="#b98240"/><stop offset=".48" stop-color="#e9c27a"/><stop offset=".65" stop-color="#92602f"/><stop offset="1" stop-color="#d5a25a"/></linearGradient>
+ <linearGradient id="edge" x2="0" y2="1"><stop stop-color="#ffe1a1"/><stop offset=".3" stop-color="#845024"/><stop offset=".53" stop-color="#edc578"/><stop offset="1" stop-color="#503118"/></linearGradient>
+ <radialGradient id="petal"><stop stop-color="#eccf8a"/><stop offset=".45" stop-color="#b38343"/><stop offset="1" stop-color="#56321e"/></radialGradient>
+ <path id="opening" d="M100 879V469Q82 445 107 422Q89 393 121 376Q109 343 147 331Q147 300 186 300Q201 268 237 280Q259 248 291 259Q304 240 320 236Q336 240 349 259Q381 248 403 280Q439 268 454 300Q493 300 493 331Q531 343 519 376Q551 393 533 422Q558 445 540 469V879Z"/>
+ <mask id="frame"><path fill="#fff" d="M18 15H622V881H18Z"/><use href="#opening" fill="#000"/></mask>
+ <g id="rosette"><g fill="url(#petal)" stroke="#e7ba6e" stroke-width=".75"><ellipse cy="-11" rx="4" ry="9"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(45)"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(90)"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(135)"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(180)"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(225)"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(270)"/><ellipse cy="-11" rx="4" ry="9" transform="rotate(315)"/></g><circle r="5" fill="#39271c" stroke="#f5d394"/><circle r="2" fill="#f4deb3"/></g>
+ <g id="vine" stroke="#deb36c" stroke-width="1.1"><path d="M0 80C24 61-19 42 3 18Q12 8 0 0"/><path d="M1 60C21 64 24 43 8 43Q20 55 1 60ZM-1 34C-23 40-22 19-9 18Q-19 29-1 34Z" fill="#624323"/><path d="M4 12Q23 18 19 2Q9 2 4 12" fill="#af803d"/></g>
+ <pattern id="vines" width="40" height="80" patternUnits="userSpaceOnUse"><use href="#vine" x="20"/></pattern>
+ <pattern id="flowers" width="64" height="64" patternUnits="userSpaceOnUse"><use href="#rosette" x="32" y="32" transform="scale(1)"/></pattern>
+ <pattern id="beads" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="5" cy="5" r="2" fill="#ead09c"/><circle cx="4.5" cy="4.5" r=".65" fill="#fff0ca"/></pattern>
+</defs>
+<g mask="url(#frame)">
+ <path d="M18 15H622V882H18Z" fill="url(#metal)"/>
+ <path d="M30 26H610V872H30Z" stroke="#33261e" stroke-width="9"/>
+ <path d="M30 26H610V872H30Z" stroke="url(#edge)" stroke-width="3"/>
+ <path d="M42 38H598V862H42Z" stroke="#f4ce86" stroke-width="1"/>
+ <path d="M45 38H595V113H45Z" fill="#785030"/>
+ <path d="M45 38H595V113H45Z" fill="url(#flowers)"/>
+ <path d="M45 117H595V131H45Z" fill="url(#beads)"/>
+ <path d="M45 139H595V194H45Z" fill="#53371f"/>
+ <path d="M45 139H595V194H45Z" fill="url(#flowers)" transform="translate(0 -7)"/>
+ <path d="M40 34H600M40 115H600M40 133H600M40 195H600M40 209H600" stroke="url(#edge)" stroke-width="4"/>
+ <path d="M42 212H598V853H42Z" fill="url(#vines)"/>
+ <path d="M43 224H90V856H43ZM550 224H597V856H550Z" fill="#624325"/>
+ <path d="M43 224H90V856H43ZM550 224H597V856H550Z" fill="url(#vines)"/>
+ <path d="M43 224H90V856H43ZM550 224H597V856H550Z" stroke="url(#edge)" stroke-width="4"/>
+ <use href="#opening" fill="none" stroke="#35221a" stroke-width="26"/>
+ <use href="#opening" fill="none" stroke="url(#edge)" stroke-width="20"/>
+ <use href="#opening" fill="none" stroke="#4c2c19" stroke-width="11"/>
+ <use href="#opening" fill="none" stroke="#e2b77a" stroke-width="6"/>
+ <use href="#opening" fill="none" stroke="#fbe1a3" stroke-width="1"/>
+ <use href="#rosette" x="172" y="233" transform="translate(-30 -20) scale(1.2)"/>
+ <use href="#rosette" x="468" y="233" transform="translate(-94 -20) scale(1.2)"/>
+ <use href="#rosette" x="320" y="216" transform="translate(64 43) scale(.8)"/>
+ <path d="M107 266Q129 244 143 275Q124 275 107 266ZM533 266Q511 244 497 275Q516 275 533 266ZM194 249Q201 227 221 240Q209 258 194 249ZM446 249Q439 227 419 240Q431 258 446 249Z" fill="#4f331f" stroke="#f0c780"/>
+ <path d="M24 860H616V881H24Z" fill="url(#edge)"/><path d="M24 861H616M24 877H616" stroke="#f8dda1" stroke-width="1.4"/>
+</g>
+<path d="M100 879V469Q82 445 107 422Q89 393 121 376Q109 343 147 331Q147 300 186 300Q201 268 237 280Q259 248 291 259Q304 240 320 236Q336 240 349 259Q381 248 403 280Q439 268 454 300Q493 300 493 331Q531 343 519 376Q551 393 533 422Q558 445 540 469V879" stroke="#ecce94" stroke-width="1" opacity=".6"/>
+</svg>

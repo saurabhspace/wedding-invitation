@@ -9,6 +9,7 @@ A static invitation for **2–4 December 2026** at our home in Village Behlaog, 
 - `assets/app.js` — lamp entrance, scratch/tap date reveal, English/Hindi toggle, countdown, guest steppers, WhatsApp drafts, optional map, sharing and opt-in instrumental ambience.
 - `assets/images/couple.webp` — optimized copy of the supplied portrait; the source upload is unchanged.
 - `assets/images/brass-diya.webp` and `gold-divider.webp` — original generated decorative assets optimized for the page.
+- `assets/decor/entrance-gate.svg` — original ornamental gate with cool and golden lighting layers; ten small side lamps are drawn in HTML/CSS.
 - `assets/decor/ornate-frame.svg`, `midnight-texture.svg` and `home-placeholder.svg` — original page graphics. Earlier artwork remains available in the repository.
 - `assets/calendar/*.ics` — individual all-day dates and a combined three-day reservation.
 
@@ -34,7 +35,7 @@ Sharing uses the device share sheet when supported, otherwise clipboard copying 
 
 ## Interactions and accessibility
 
-The entrance is enabled only by JavaScript; without JavaScript the invitation is readable. Date cards support scratching, tapping and keyboard activation. Native number fields remain editable as an alternative to guest +/- controls. English is the default language. Sound is off by default and the play/mute buttons start an original local Web Audio pattern; no song file, third-party player or autoplay is used. Sound stops when the page is hidden. Reduced-motion preferences suppress animated transitions, flicker and section reveals.
+The entrance is enabled only by JavaScript; without JavaScript the invitation is readable. A tap lights the central wick immediately, warms the gate and side lamps after 420 ms, reveals the names after 1.4 seconds, then opens the invitation after 3.8 seconds. The same lit gate stays behind the welcome. Reduced-motion visitors open the invitation immediately; changing that preference during the sequence also completes the entrance and clears its timers. Date cards support scratching, tapping and keyboard activation. Native number fields remain editable as an alternative to guest +/- controls. English is the default language. Sound is off by default and the play/mute buttons start an original local Web Audio pattern; no song file, third-party player or autoplay is used. Sound stops when the page is hidden. Reduced-motion preferences suppress animated transitions, flicker and section reveals.
 
 ## Preview and hosting
 
