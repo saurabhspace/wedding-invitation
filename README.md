@@ -1,21 +1,24 @@
 # Saurabh & Simran — Wedding Invitation
 
-A static invitation for **2–4 December 2026** at our home in Village Behlaog, Theog, Shimla. The theme uses a charcoal textured background, gold calligraphy, ornate frames and jewel-like floral dividers. There is no palace image or substitute photograph of the home.
+A static invitation for **2–4 December 2026** at our home in Village Behlaog, Theog, Shimla. The theme uses a charcoal textured background, gold calligraphy, ornate frames and jewel-like floral dividers. The home section uses the supplied hillside photograph.
 
 ## Page and assets
 
-- `index.html` — invitation, supplied couple portrait, dates, timeline, home placeholder, directions, family placeholders, a separate song card, background music and per-day RSVP.
+- `index.html` — invitation, supplied couple portrait, dates, timeline, home photograph, directions, family placeholders, a separate song card, background music and per-day RSVP.
 - `assets/styles.css` — responsive English/Hindi typography, dark texture, lamp flame and reduced-motion styles.
 - `assets/app.js` — lamp entrance, scratch/tap date reveal, English/Hindi toggle, countdown, guest steppers, WhatsApp drafts, optional map, sharing and opt-in instrumental ambience.
 - `assets/images/couple.webp` — optimized copy of the supplied portrait; the source upload is unchanged.
+- `assets/images/home.webp` — optimized supplied home photograph, preserving the complete 1536 × 645 panorama.
 - `assets/images/brass-diya.webp` and `gold-divider.webp` — original generated decorative assets optimized for the page.
 - `assets/decor/entrance-gate.svg` — original ornamental gate with cool and golden lighting layers; ten small side lamps are drawn in HTML/CSS.
-- `assets/decor/ornate-frame.svg`, `midnight-texture.svg` and `home-placeholder.svg` — original page graphics. Earlier artwork remains available in the repository.
+- `assets/decor/ornate-frame.svg` and `midnight-texture.svg` — original page graphics. Earlier artwork remains available in the repository.
 - `assets/calendar/*.ics` — individual all-day dates and a combined three-day reservation.
 
-## Add the home photograph later
+## Home photograph
 
-Upload the actual home photograph to `assets/images/home.webp`, then change `#homePhoto` in `index.html` from `assets/decor/home-placeholder.svg` to that file. Set accurate width, height and descriptive alt text. Replace the placeholder caption and update the Hindi `homePhoto` translation in `assets/app.js`. No JavaScript or CSS layout change is required.
+The supplied photograph is shown in a gold double frame with a dark mat, preserving its full panoramic view. It is lazy-loaded, and the photo and caption link both open the larger image in a new tab. The original upload is unchanged.
+
+To replace it later, update `assets/images/home.webp`, the intrinsic width/height and descriptive alt text in `index.html`, and both English/Hindi captions if needed. Update the photo cache key in its image source and both full-photo links.
 
 ## Personalize the family section and song
 
