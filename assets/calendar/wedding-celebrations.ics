@@ -4,12 +4,12 @@ PRODID:-//Saurabh and Simran//Wedding Invitation//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:wedding-20261202-04@saurabhspace.github.io
-DTSTAMP:20261103T000000Z
+DTSTAMP:20261114T060000Z
 DTSTART;VALUE=DATE:20261202
 DTEND;VALUE=DATE:20261205
 SUMMARY:Saurabh & Simran — Wedding celebrations
-LOCATION:Village Behlaog\, Theog\, Shimla\, Himachal Pradesh
-DESCRIPTION:Save the date. Ceremony names and timings will be shared later.
+LOCATION:Village Behlaog\, P.O. Bagari\, Theog\, Shimla\, Himachal Pradesh
+DESCRIPTION:Wednesday\, 2 December: 8:30 AM Sarvarambh · Ceremonial beginning\; 2:50 PM Teladi Lepanam · Oil anointing\; 5:15 PM Welcome to maternal relatives\; 7:00 PM Dinner | Thursday\, 3 December: 5:30 AM Sehra Bandi\; 6:30 AM Baraat departure\; 6:00 PM Bride's arrival (Vadhu Pravesh)\; 7:15 PM Dinner | Friday\, 4 December: 10:00 AM Jal Yatra\; 12:30 PM onwards Preeti Bhoj · Community feast (from)\nAll times IST. Events take place at the family home unless the programme specifies otherwise.
 STATUS:CONFIRMED
 TRANSP:TRANSPARENT
 END:VEVENT
