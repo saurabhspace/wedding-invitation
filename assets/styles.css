@@ -76,3 +76,14 @@ html[lang=hi] body{font-family:var(--hindi);font-size:18px;line-height:1.9}html[
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal-ready{opacity:1;transform:none}}
 
 .whatsapp-icon{width:24px;height:24px;flex-shrink:0}
+
+/* Invitation-card programme: times remain legible on narrow screens. */
+.event-programme{padding:0;margin:18px 0 20px;list-style:none;text-align:left;border-top:1px solid var(--line)}
+.event-programme li{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:10px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);font-size:17px;line-height:1.4}
+.event-programme .programme-name{color:var(--paper,#f4e9d6);overflow-wrap:break-word}
+.event-programme time{color:var(--gold);white-space:nowrap;font-size:16px;font-variant-numeric:tabular-nums}
+.event-info{min-width:0}.event-info h3{margin-top:13px}.event-info .calendar-link{display:inline-block;margin-top:3px}
+.family-origin{font-size:18px!important;color:var(--muted);margin-top:10px!important}.travel-note .calendar-link+.calendar-link{display:block;margin-top:14px}
+html[lang=hi] .event-programme li{font-size:16px;line-height:1.65}html[lang=hi] .event-programme time{font-size:14px}
+@media(max-width:600px){.timeline{max-width:480px}.timeline:before,.event:after{display:none}.event,.event:nth-child(even){display:flex;flex-direction:column;gap:4px;align-items:stretch;margin-bottom:52px}.event-art,.event:nth-child(even) .event-art{width:145px;min-height:155px;max-width:145px;align-self:center}.event-info,.event:nth-child(even) .event-info{text-align:left;width:100%}.event-info h3{font-size:30px}.event-programme li{font-size:17px;gap:11px}.event-programme time{font-size:15px}.family-origin{font-size:16px!important}}
+@media(max-width:360px){.event-programme li{font-size:15px;gap:8px}.event-programme time{font-size:14px}html[lang=hi] .event-programme li{font-size:14px}html[lang=hi] .event-programme time{font-size:13px}}
