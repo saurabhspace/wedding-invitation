@@ -22,7 +22,7 @@ To replace it later, update `assets/images/home.webp`, the intrinsic width/heigh
 
 ## Personalize the family section and song
 
-The four family groups deliberately show bracketed placeholders: grandparents and parents, family names and hometowns, siblings/cousins/loved ones, and a message from the children. Replace the relevant `family*` copy in `index.html` and its Hindi translations in `assets/app.js`. Remove groups that do not apply; do not copy relatives from the design reference.
+The family section now includes both sets of parents from the invitation card. Remaining bracketed placeholders are only for unspecified siblings/cousins/loved ones and a message from the children. Replace the relevant `family*` copy in `index.html` and its Hindi translations in `assets/app.js`. Remove groups that do not apply; do not copy relatives from the design reference.
 
 The “Our song” card is separate from background music. Set `OUR_SONG` in `assets/app.js` with the confirmed song title, optional artist and an HTTPS listening link. Blank or invalid configuration keeps an honest placeholder with no play button. A configured link opens the song provider in a new tab and pauses the background instrumental first. The website does not download, host or autoplay the track. Background music keeps its own inline and floating controls.
 
@@ -30,11 +30,11 @@ The “Our song” card is separate from background music. Set `OUR_SONG` in `as
 
 The confirmed Hindi spelling of Behlaog is **बेहलावग**. Keep it consistent in the invitation and its translations.
 
-Ceremony names and timings are still undecided. The timeline deliberately shows day numbers and “Details to follow”. Update its copy and the Hindi translations after confirmation. Do not copy ceremony names, dates, relatives, travel times or venue details from the design reference.
+Ceremony names and timings now follow the provided printed invitation card (2–4 December 2026); the bilingual programme is shown in the timeline and calendar descriptions. All times are IST. The card lists the groom’s parents as Sushma and Shriram Sharma, bride’s parents as Nisha and Vinod Sharma, and venue as Village Behlaog, P.O. Bagari, Tehsil Theog, District Shimla. The couple’s song and some extended family entries remain placeholders until supplied.
 
-The countdown leads to **2 December 2026 at 00:00 IST**, the start of the first celebration date, not a confirmed ceremony time. Change `CELEBRATIONS_START`, its accessible label, the countdown note and translations together if a ceremony becomes the target.
+The countdown now leads to **2 December 2026 at 08:30 IST**, the first listed ceremony (Sarvarambh). `CELEBRATIONS_START`, its accessible label, countdown note and translations agree.
 
-Calendar entries reserve whole days. The combined event uses `DTSTART:20261202` and exclusive `DTEND:20261205` to include 2–4 December. Keep UIDs stable and update DTSTAMP when editing calendar events. Device import behavior varies.
+Calendar entries reserve whole days and include the printed ceremony timetable in their descriptions; durations have not been invented. The combined event uses `DTSTART:20261202` and exclusive `DTEND:20261205` to include 2–4 December. Keep UIDs stable and update DTSTAMP when editing calendar events. Device import behavior varies.
 
 ## RSVP and external links
 
